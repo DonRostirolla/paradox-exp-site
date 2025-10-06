@@ -33,7 +33,7 @@ body {
   align-items: flex-end;
   justify-content: center;
   padding: 24px;
-  padding-bottom: clamp(56px, 18vh, 180px); /* controla a distância do rodapé */
+  padding-bottom: clamp(56px, 10vh, 180px); /* controla a distância do rodapé */
 }
 
 /* Botão “Em breve” */
