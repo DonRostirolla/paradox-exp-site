@@ -1,134 +1,30 @@
-/* Reset básico */
-*,
-*::before,
-*::after { box-sizing: border-box; }
-html, body { height: 100%; }
-body {
-  margin: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-  color: #fff;
-  background: #000;
-}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Paradox Experience — Em breve</title>
 
-/* Plano de fundo com o wallpaper do evento */
-.bg {
-  position: fixed;
-  inset: 0;
-  background: url("assets/wallpaper-paradox-exp.png") center 42% / cover no-repeat fixed;
-  z-index: -2;
-}
+  <!-- SEO básico -->
+  <meta name="description" content="Paradox Experience — Onde tecnologia, cultura e diversão se encontram no Oeste do Paraná. Em breve!" />
+  <meta name="author" content="Paradox Exp" />
+  <meta property="og:title" content="Paradox Experience — Em breve" />
+  <meta property="og:description" content="Onde tecnologia, cultura e diversão se encontram no Oeste do Paraná." />
+  <meta property="og:image" content="assets/wallpaper-paradox-exp.png" />
+  <meta property="og:type" content="website" />
 
-/* Leve overlay para contraste do botão (opcional) */
-.bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.35);
-}
+  <!-- Favicon opcional -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
 
-/* Centralização do conteúdo */
-.wrap {
-  min-height: 100svh;              /* usa viewport segura em mobile */
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding: 24px;
-  padding-bottom: clamp(56px, 10vh, 180px); /* controla a distância do rodapé */
-}
+  <!-- Performance -->
+  <link rel="preload" as="image" href="assets/wallpaper-paradox-exp.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg"></div>
 
-/* Botão “Em breve” — pill com borda gradiente, glass e glow */
-.soon{
-  --a1:#137a7f;          /* teal Paradox/TIC */
-  --a2:#c0266a;          /* magenta da marca */
-  position:relative;
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:.5rem;
-  padding:14px 30px;
-  border-radius:9999px;
-  font-size:1.05rem;
-  font-weight:800;
-  letter-spacing:.02em;
-  line-height:1;
-  text-decoration:none;
-  color:#fff;
-  cursor:pointer;
-
-  /* vidro + borda gradiente (duas camadas) */
-  background:
-    linear-gradient(rgba(20,20,20,.62), rgba(20,20,20,.62)) padding-box,
-    linear-gradient(135deg, var(--a1), var(--a2)) border-box;
-  border:1.6px solid transparent;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-
-  /* sombras sutis */
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.12),
-    0 10px 30px rgba(0,0,0,.45);
-
-  transition:
-    transform .15s ease,
-    box-shadow .2s ease,
-    background .2s ease,
-    opacity .2s ease;
-}
-
-/* glow colorido ao passar o mouse */
-.soon::before{
-  content:"";
-  position:absolute;
-  inset:-6px;
-  border-radius:inherit;
-  background:
-    radial-gradient(110% 110% at 0% 0%, var(--a2) 0%, transparent 60%),
-    radial-gradient(110% 110% at 100% 100%, var(--a1) 0%, transparent 60%);
-  filter: blur(16px);
-  opacity:0;
-  z-index:-1;
-  transition:opacity .2s ease;
-}
-
-/* brilho “sheen” rápido */
-.soon::after{
-  content:"";
-  position:absolute;
-  inset:1px;
-  border-radius:inherit;
-  background:linear-gradient(120deg, transparent 35%, rgba(255,255,255,.35) 50%, transparent 65%);
-  transform:translateX(-120%);
-  mix-blend-mode:screen;
-  pointer-events:none;
-  transition:transform .65s ease;
-}
-
-.soon:hover{
-  transform:translateY(-1px);
-  box-shadow:
-    inset 0 1px 0 rgba(255,255,255,.18),
-    0 16px 40px rgba(0,0,0,.55),
-    0 0 24px rgba(19,122,127,.25);
-}
-.soon:hover::before{ opacity:.65; }
-.soon:hover::after{ transform:translateX(120%); }
-
-.soon:active{ transform:translateY(0); box-shadow: 0 8px 24px rgba(0,0,0,.5); }
-.soon:focus-visible{ outline:2px solid #fff; outline-offset:3px; }
-
-@media (max-width: 420px) {
-  .soon { width: 100%; max-width: 320px; padding:14px 22px; }
-}
-
-/* acessibilidade: reduz animações se o usuário preferir menos movimento */
-@media (prefers-reduced-motion: reduce){
-  .soon, .soon::after{ transition:none; }
-}
-
-/* Ajustes por proporção de tela (evita cortar demais a marca) */
-@media (min-aspect-ratio: 16/9) {
-  .bg { background-position: center 45%; } /* telas mais largas */
-}
-@media (max-aspect-ratio: 4/5) {
-  .bg { background-position: 50% 35%; }    /* telas mais altas (mobile) */
-}
+  <main class="wrap">
+    <a href="https://paradoxp.org" class="soon" target="_blank" rel="noopener">Em breve</a>
+  </main>
+</body>
+</html>
