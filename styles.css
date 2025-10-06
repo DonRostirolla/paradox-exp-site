@@ -14,7 +14,7 @@ body {
 .bg {
   position: fixed;
   inset: 0;
-  background: url("assets/wallpaper-paradox-exp.jpg") center / cover no-repeat fixed;
+  background: url("assets/wallpaper-paradox-exp.png") center / cover no-repeat fixed;
   z-index: -2;
 }
 
